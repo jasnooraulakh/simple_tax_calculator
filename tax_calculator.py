@@ -45,7 +45,7 @@ class TaxCalculator:
         #     Slice 1: tot income - tax amount -- "Net Income"
         #     Slice 2: tax amount -- "Taxed Income"
         slices = [(self.income - self.tax_amount), self.tax_amount]
-        labels = ["Net Income", "Taxed Income"]
+        labels = [f"Net Income: \n${self.income}", f"Taxed Income: \n${self.tax_amount}"]
 
         # PIE CHART PARAMETERS:
         # Edge Color: Black
