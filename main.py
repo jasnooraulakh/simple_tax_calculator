@@ -7,3 +7,4 @@ tax_calc = TaxCalculator(income)
 total_tax_owed = tax_calc.calculate_tax()
 print(f"Tax owed: {total_tax_owed}")
 
+tax_calc.plot_taxes()

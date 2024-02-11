@@ -1,4 +1,6 @@
 import matplotlib.pyplot as plt
+import numpy as np
+
 
 class TaxCalculator:
 
@@ -32,9 +34,10 @@ class TaxCalculator:
         self.tax_amount = tax_owed
         return self.tax_amount
 
-
     def plot_taxes(self):
 
-        plt.bar(self.income, self.tax_amount)
-        plt.show()
+        plt.style.use("fivethirtyeight")
+        slices = [(self.income - self.tax_amount), self.tax_amount]
 
+        plt.pie(slices)
+        plt.show()
