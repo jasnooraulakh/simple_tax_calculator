@@ -39,10 +39,18 @@ class TaxCalculator:
 
         plt.style.use("fivethirtyeight")
 
-        # Assign data to pie chart
+        # PIE CHART DATA:
+        # Slices:
+        # (tot income = 100%)
+        #     Slice 1: tot income - tax amount -- "Net Income"
+        #     Slice 2: tax amount -- "Taxed Income"
         slices = [(self.income - self.tax_amount), self.tax_amount]
         labels = ["Net Income", "Taxed Income"]
 
-        plt.pie(slices, labels=labels)
+        # PIE CHART PARAMETERS:
+        # Edge Color: Black
+        plt.pie(slices, labels=labels, wedgeprops={'edgecolor': 'black'})
+
         plt.title("Gross Income Breakdown")
+        plt.tight_layout()
         plt.show()
