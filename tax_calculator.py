@@ -34,10 +34,15 @@ class TaxCalculator:
         self.tax_amount = tax_owed
         return self.tax_amount
 
-    def plot_taxes(self):
+    def display_pie_chart(self):
+        """Display a pie chart to visualize income breakdown"""
 
         plt.style.use("fivethirtyeight")
-        slices = [(self.income - self.tax_amount), self.tax_amount]
 
-        plt.pie(slices)
+        # Assign data to pie chart
+        slices = [(self.income - self.tax_amount), self.tax_amount]
+        labels = ["Net Income", "Taxed Income"]
+
+        plt.pie(slices, labels=labels)
+        plt.title("Gross Income Breakdown")
         plt.show()
