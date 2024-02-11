@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+
 class TaxCalculator:
 
     def __init__(self, income):
@@ -29,4 +31,10 @@ class TaxCalculator:
 
         self.tax_amount = tax_owed
         return self.tax_amount
+
+
+    def plot_taxes(self):
+
+        plt.bar(self.income, self.tax_amount)
+        plt.show()
 
