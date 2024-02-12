@@ -49,7 +49,7 @@ class TaxCalculator:
 
         # PIE CHART PARAMETERS:
         # Edge Color: Black
-        plt.pie(slices, labels=labels, wedgeprops={'edgecolor': 'black'})
+        plt.pie(slices, labels=labels, autopct='%1.1f%%', wedgeprops={'edgecolor': 'black'})
 
         plt.title("Gross Income Breakdown")
         plt.tight_layout()
