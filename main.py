@@ -1,10 +1,6 @@
 from tax_calculator import TaxCalculator
 
-
-income = float(input("Please enter your income: "))
-
-tax_calc = TaxCalculator(income)
-total_tax_owed = tax_calc.calculate_tax()
-print(f"Tax owed: {total_tax_owed}")
-
+tax_calc = TaxCalculator()
+tax_calc.get_user_input()
+tax_calc.calculate_tax()
 tax_calc.display_pie_chart()
