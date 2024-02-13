@@ -8,6 +8,7 @@ class TaxCalculator:
         self.income = 0.00
         self.tax_amount = 0.00
         self.net_income = 0.00
+        self.taxpayer_type = ""
 
         self.tax_bracket = [
             (0, 11000, 0.10),
@@ -22,9 +23,9 @@ class TaxCalculator:
     def get_user_input(self):
         """Prompt user to enter details"""
         while True:
-            taxpayer_type = input("Enter taxpayer (Single or Married): ")
+            self.taxpayer_type = input("Enter taxpayer (Single or Married): ")
 
-            if taxpayer_type.lower() == "married":
+            if self.taxpayer_type.lower() == "married":
                 self.tax_bracket = [
                     (0, 22000, 0.10),
                     (22001, 89450, 0.12),
@@ -36,7 +37,7 @@ class TaxCalculator:
                 ]
                 break
 
-            elif taxpayer_type.lower() == "single":
+            elif self.taxpayer_type.lower() == "single":
                 self.tax_bracket = [
                     (0, 11000, 0.10),
                     (11001, 44725, 0.12),
@@ -89,7 +90,7 @@ class TaxCalculator:
         # Edge Color: Black
         plt.pie(slices, labels=labels, colors=colors, autopct='%1.1f%%', wedgeprops={'edgecolor': 'black'})
 
-        plt.title("Gross Income Breakdown")
+        plt.title(f"Gross Income Breakdown: {self.taxpayer_type.title()} Taxpayer")
         plt.tight_layout()
         plt.show()
 
