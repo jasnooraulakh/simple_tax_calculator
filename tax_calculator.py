@@ -51,7 +51,7 @@ class TaxCalculator:
                 print("Invalid entry")
                 continue
 
-        self.income = float(input("Enter your income: "))
+        self.income = float(input("Enter your income: $"))
 
     def calculate_tax(self):
         """Calculate the tax owed amount across brackets"""
@@ -80,7 +80,7 @@ class TaxCalculator:
         #     Slice 1: tot income - tax amount -- "Net Income"
         #     Slice 2: tax amount -- "Taxed Income"
         slices = [(self.income - self.tax_amount), self.tax_amount]
-        labels = [f"Net Income: \n${self.income}", f"Taxed Income: \n${self.tax_amount}"]
+        labels = [f"Net Income: \n${self.income-self.tax_amount}", f"Tax Amount: \n${self.tax_amount}"]
         colors = ['cyan', 'red']
 
         # PIE CHART PARAMETERS:
