@@ -7,6 +7,7 @@ class TaxCalculator:
     def __init__(self):
         self.income = 0.00
         self.tax_amount = 0.00
+        self.net_income = 0.00
 
         self.tax_bracket = [
             (0, 11000, 0.10),
@@ -67,7 +68,8 @@ class TaxCalculator:
                 break
 
         self.tax_amount = tax_owed
-        return self.tax_amount
+        self.net_income = self.income - self.tax_amount
+        return self.tax_amount, self.net_income
 
     def display_pie_chart(self):
         """Display a pie chart to visualize income breakdown"""
@@ -79,8 +81,8 @@ class TaxCalculator:
         # (tot income = 100%)
         #     Slice 1: tot income - tax amount -- "Net Income"
         #     Slice 2: tax amount -- "Taxed Income"
-        slices = [(self.income - self.tax_amount), self.tax_amount]
-        labels = [f"Net Income: \n${self.income-self.tax_amount}", f"Tax Amount: \n${self.tax_amount}"]
+        slices = [self.net_income, self.tax_amount]
+        labels = [f"Net Income: \n${self.net_income}", f"Tax Amount: \n${self.tax_amount}"]
         colors = ['cyan', 'red']
 
         # PIE CHART PARAMETERS:
@@ -90,3 +92,13 @@ class TaxCalculator:
         plt.title("Gross Income Breakdown")
         plt.tight_layout()
         plt.show()
+
+    def print_details(self):
+        """Display the details for taxes calculated"""
+        print("----------------------------------------------")
+        print("Thank you for using the Tax Calculator")
+        print("----------------------------------------------")
+        print()
+        print(f"Your total income was: ${self.income}")
+        print(f"Net Income: ${self.net_income}")
+        print(f"Tax Amount: ${self.tax_amount}")
