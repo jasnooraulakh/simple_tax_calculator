@@ -1,6 +1,6 @@
 **Tax Calculator**
 
-The Tax Calculator is a simple tax amount estimator for US taxpayers, based on IRS tax brackets.
+The Tax Calculator is a simple tax amount estimator for US taxpayers, based on IRS tax brackets 2023.
 Currently, the estimate can be calculated for:
   - Single Taxpayers
   - Married couple (filing jointly)
