@@ -2,6 +2,7 @@ from tax_calculator import TaxCalculator
 
 
 def intro():
+    """Print the introductory text"""
     print("--------------------------------")
     print("---------TAX CALCULATOR---------")
     print("--------------------------------")
@@ -13,6 +14,7 @@ def intro():
 
 
 def get_user_input():
+    """Get user input-set status, bracket, & income"""
     tax_calc = TaxCalculator()
 
     # Get user's filing status
@@ -22,6 +24,7 @@ def get_user_input():
         if filing_status_input.isdigit() and int(filing_status_input) in [1, 2]:
             filing_status_input = int(filing_status_input)
 
+            # Verify and pass status to class
             if filing_status_input == 1:
                 tax_calc.taxpayer_type = "single"
                 tax_calc.set_tax_bracket()
@@ -36,6 +39,7 @@ def get_user_input():
     # Get user income
     print("Enter your income for 2023")
 
+    # Verify and pass income to class
     while True:
         try:
             gross_income = float(input("Gross income: $"))
@@ -52,6 +56,7 @@ def get_user_input():
 
 
 def menu():
+    """Display menu for the program"""
     print()
     print("What would you like to do today?")
     print("1. Tax Details")
@@ -77,12 +82,16 @@ def main():
         choice = menu()
 
         if choice == 1:
+            # Display calculated tax details
             tax_calc.print_details()
         elif choice == 2:
+            # Display pie chart
             tax_calc.display_pie_chart()
         elif choice == 3:
+            # Display advanced pie/donut chart
             tax_calc.donut_chart()
         elif choice == 4:
+            # Exit
             print()
             print("Thank you for using the Tax Calculator")
             break
