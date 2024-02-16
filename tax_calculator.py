@@ -9,15 +9,7 @@ class TaxCalculator:
         self.net_income = 0.00
         self.taxpayer_type = ""
 
-        self.tax_bracket = [
-            (0, 11000, 0.10),
-            (11001, 44725, 0.12),
-            (44726, 95375, 0.22),
-            (95376, 182100, 0.24),
-            (182101, 231250, 0.32),
-            (231251, 578125, 0.35),
-            (578126, float('inf'), 0.37)
-        ]
+        self.tax_bracket = []
 
     def get_user_input(self):
         """Prompt user to enter details"""
@@ -53,6 +45,29 @@ class TaxCalculator:
                 continue
 
         self.income = float(input("Enter your income: $"))
+
+    def set_tax_bracket(self):
+        if self.taxpayer_type == "single":
+            self.tax_bracket = [
+                (0, 11000, 0.10),
+                (11001, 44725, 0.12),
+                (44726, 95375, 0.22),
+                (95376, 182100, 0.24),
+                (182101, 231250, 0.32),
+                (231251, 578125, 0.35),
+                (578126, float('inf'), 0.37)
+            ]
+
+        elif self.taxpayer_type == "married":
+            self.tax_bracket = [
+                (0, 22000, 0.10),
+                (22001, 89450, 0.12),
+                (89451, 190750, 0.22),
+                (190751, 364200, 0.24),
+                (364201, 462500, 0.32),
+                (462501, 693750, 0.35),
+                (693751, float('inf'), 0.37)
+            ]
 
     def calculate_tax(self):
         """Calculate the tax owed amount across brackets"""
