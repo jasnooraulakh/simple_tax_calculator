@@ -95,10 +95,12 @@ class TaxCalculator:
 
     def donut_chart(self):
 
+        # Outer shell properties
         outer_shell = [self.income]
         outer_label = ["Gross Income"]
         outer_colors = ["gold"]
 
+        # Inner shell properties
         inner_shell = [self.net_income, self.tax_amount]
         inner_label = ["Net Income", "Tax Amount"]
         inner_colors = ["dodgerblue", "tomato"]
@@ -109,8 +111,9 @@ class TaxCalculator:
                radius=1.2, colors=outer_colors, wedgeprops=dict(width=0.3, edgecolor="white"))
 
         ax.pie(inner_shell, labels=inner_label,
-               radius=0.9, colors=inner_colors, autopct='%1.1f%%', wedgeprops=dict(width=0.3, edgecolor='white'))
+               radius=0.9, colors=inner_colors, autopct="%1.1f%%", wedgeprops=dict(width=0.3, edgecolor='white'))
 
+        # Set aspect ratios equal
         ax.axis("equal")
         plt.show()
 
