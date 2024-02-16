@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 
+
 class TaxCalculator:
 
     def __init__(self):
@@ -90,6 +91,27 @@ class TaxCalculator:
 
         plt.title(f"Gross Income Breakdown: {self.taxpayer_type.title()} Taxpayer")
         plt.tight_layout()
+        plt.show()
+
+    def donut_chart(self):
+
+        outer_shell = [self.income]
+        outer_label = ["Gross Income"]
+        outer_colors = ["gold"]
+
+        inner_shell = [self.net_income, self.tax_amount]
+        inner_label = ["Net Income", "Tax Amount"]
+        inner_colors = ["dodgerblue", "tomato"]
+
+        fig, ax = plt.subplots()
+
+        ax.pie(outer_shell, labels=outer_label,
+               radius=1.2, colors=outer_colors, wedgeprops=dict(width=0.3, edgecolor="white"))
+
+        ax.pie(inner_shell, labels=inner_label,
+               radius=0.9, colors=inner_colors, autopct='%1.1f%%', wedgeprops=dict(width=0.3, edgecolor='white'))
+
+        ax.axis("equal")
         plt.show()
 
     def print_details(self):
