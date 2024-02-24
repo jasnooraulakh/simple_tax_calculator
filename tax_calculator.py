@@ -135,7 +135,7 @@ class TaxCalculator:
     def print_details(self):
         """Display the details for taxes calculated"""
         print("----------------------------------------------")
-        print("Thank you for using the Tax Calculator")
+        print("Thank you for using the Tax Estimator")
         print("----------------------------------------------")
         print()
         print(f"Your total income was: ${self.income}")

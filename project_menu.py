@@ -4,7 +4,7 @@ from tax_calculator import TaxCalculator
 def intro():
     """Print the introductory text"""
     print("--------------------------------")
-    print("---------TAX CALCULATOR---------")
+    print("---------TAX ESTIMATOR---------")
     print("--------------------------------")
     print()
     print("What is your filing status?")
@@ -93,7 +93,7 @@ def main():
         elif choice == 4:
             # Exit
             print()
-            print("Thank you for using the Tax Calculator")
+            print("Thank you for using the Tax Estimator")
             break
         else:
             print("Invalid input")
