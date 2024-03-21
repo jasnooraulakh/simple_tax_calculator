@@ -4,7 +4,7 @@ from tax_calculator import TaxCalculator
 def intro():
     """Print the introductory text"""
     print("--------------------------------")
-    print("---------TAX ESTIMATOR---------")
+    print("---------TAX ESTIMATOR----------")
     print("--------------------------------")
     print()
     print("What is your filing status?")
@@ -58,7 +58,7 @@ def get_user_input():
 def menu():
     """Display menu for the program"""
     print()
-    print("What would you like to do today?")
+    print("What would you like to do?")
     print("1. Tax Details")
     print("2. Pie Chart")
     print("3. Donut Chart")
